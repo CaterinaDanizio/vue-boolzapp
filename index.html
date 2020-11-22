@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="it" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Whatapp interface simulation</title>
+    <!-- Link al file CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Link a Vue js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <!-- Mediaquery -->
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Link a Fontawesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+      <!-- Link Google font -->
+      <link rel="preconnect" href="https://fonts.gstatic.com">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div id="header">
+      </div>
+      <div id="window" class="flex">
+        <div class="left-column">
+          <div class="bar">
+            <div class="avatar flex">
+              <img src="img/avatar_io.jpg" alt="">
+              <div class="info">
+                <span>Nome utente</span>
+              </div>
+              <div class="icon grey">
+                <span><i class="fas fa-circle-notch"></i></span>
+                <span><i class="fas fa-comment-alt"></i></span>
+                <span><i class="fas fa-ellipsis-v"></i></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="notification-bar flex">
+            <ul>
+              <li>
+                <div class="avatar flex">
+                  <i class="fas fa-bell-slash"></i>
+                  <h4>Ricevi notifiche di nuovi messaggi
+                  <a href="#">Attiva notifiche desktop</a>
+                </h4>
+                </div>
+             </li>
+            </ul>
+          </div>
+
+          <div class="bar grey">
+            <div class="search flex">
+              <span>
+                <i class="fas fa-search grey avatar">
+                <input type="textarea" name="" value="">
+                </i>
+              </span>
+            </div>
+          </div>
+
+          <div class="active-chat">
+            <ul>
+              <li>
+                <div class="avatar flex space">
+                  <img src="img/avatar_1.jpg" alt="">
+                  <h4>Michele
+                  <p class="grey">ok...</p></h4>
+                </div>
+              </li>
+              <li>
+                <div class="avatar flex space">
+                  <img src="img/avatar_2.jpg" alt="">
+                  <h4>Fabio
+                  <p class="grey">ok...</p></h4>
+                </div>
+              </li>
+              <li>
+                <div class="avatar flex space">
+                  <img src="img/avatar_3.jpg" alt="">
+                  <h4>Samuele
+                  <p class="grey">ok...</p></h4>
+                </div>
+              </li>
+              <li>
+                <div class="avatar flex space">
+                  <img src="img/avatar_4.jpg" alt="">
+                  <h4>Luisa
+                  <p class="grey">ok...</p></h4>
+                </div>
+              </li>
+            </ul>
+            </div>
+          </div>
+
+    <!-- Colonna di destra -->
+          <div class="right-column">
+            <div class="bar">
+              <div class="avatar flex">
+                <img src="img/avatar_6.jpg" alt="">
+                <div class="info">
+                  <span><strong>Sara</strong></span>
+                  <p class="grey">Ultimo accesso oggi 20.11.2020 alle 16.43</p>
+                </div>
+                  <div class="icon grey">
+                    <span><i class="fas fa-search"></i></span>
+                    <span><i class="fas fa-paperclip"></i></span>
+                    <span><i class="fas fa-ellipsis-v"></i></span>
+                  </div>
+                </div>
+            </div>
+
+            <div class="chat-area">
+              <div class="msg-container flex">
+                <div class="msg-sent flex">
+                  <div class="msg-bubble">
+                    <p>Ciao come stai?</p>
+                  </div>
+                </div>
+                <div class="msg-received flex">
+                  <div class="msg-bubble">
+                    <p>Non c'è male...La serata di ieri è stata una bomba atomica. Peccato che non sei riuscita a venire. Come stai oggi?</p>
+                  </div>
+                </div>
+                <div class="msg-sent flex">
+                  <div class="msg-bubble">
+                    <p>Io tutto alla grande, mi sono ripresa completamente.</p>
+                  </div>
+                </div>
+                <div class="msg-received flex">
+                  <div class="msg-bubble">
+                    <p>Dai allora la prossima volta non puoi mancare</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="bar flex">
+              <div class="grey">
+                <i class="far fa-smile"></i>
+              </div>
+              <input type="textarea" name="" value="" placeholder="Scrivi un messaggio...">
+              <div class="grey">
+                <i class="fas fa-microphone"></i>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    <script type="text/javascript" src="js/script.js">
+
+    </script>
+  </body>
+</html>

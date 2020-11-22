@@ -1,0 +1,174 @@
+/* Regole generali */
+*{
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 15px;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+li {
+  list-style: none;
+}
+
+
+.avatar > img {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+
+/* Contenitore app */
+
+.container {
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  background-color: lightgrey;
+}
+
+#header {
+  height: 100px;
+  background-color: #128C7E;
+}
+
+/* Finestra app */
+
+#window {
+  width: 80%;
+  height: 90%;
+  margin: 0 auto;
+  position: absolute;
+  top: 5%;
+  left: 10%;
+  background-color: #ededed;
+}
+
+/* Finestra app: colonna sinistra */
+
+.left-column {
+  width: 30%;
+  height: 100%;
+  border-right: 1px solid lightgrey;
+}
+
+.bar {
+  width: 100%;
+  min-height: 60px;
+}
+
+.avatar {
+  padding: 5px 20px;
+}
+
+.info > span, .icon > span {
+  padding-left: 10px;
+}
+
+.grey {
+  color: grey;
+}
+
+.space {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  border: 0.5px solid lightgrey;
+}
+
+.notification-bar {
+  height: 15%;
+  background-color: #34b7f1;
+}
+
+.notification-bar i {
+  border-radius: 50%;
+  padding: 10px;
+  background-color: white;
+  color: #34b7f1;
+  margin-right: 10px;
+}
+
+span > i > input {
+    width: 250px;
+    height: 25px;
+    border: none;
+    margin: 0 auto;
+}
+
+span {
+  width: 100%;
+}
+
+.search {
+  height: 100%;
+  border: 1px solid lightgrey;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+}
+
+.active-chat {
+  height: 65%;
+  overflow-y: auto;
+  background-color: white;
+}
+
+/* Finestra app: colonna destra */
+
+.right-column {
+  width: 70%;
+  height: 100%;
+}
+
+.chat-area {
+  height: 80%;
+  background-image: url("../img/mine.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  overflow-y: auto;
+}
+
+.bar > input {
+  width: 90%;
+  height: 40px;
+  margin: 0px auto;
+  border-radius: 10px;
+}
+
+.msg-container {
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+  flex-direction: column;
+  padding-top: 10px;
+}
+
+.msg-sent {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-start;
+}
+
+.msg-received {
+  width: 100%;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.msg-bubble {
+  min-height: 50px;
+  max-width: 50%;
+  border-radius: 10px;
+  padding: 20px;
+  background-color: white;
+}
+
+.msg-received > .msg-bubble {
+  background-color: rgb(220, 248, 198);
+}
