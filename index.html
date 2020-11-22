@@ -13,9 +13,10 @@
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
       <!-- Link Google font -->
       <link rel="preconnect" href="https://fonts.gstatic.com">
-      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
   </head>
   <body>
+
     <div class="container">
       <div id="header">
       </div>
@@ -25,12 +26,12 @@
             <div class="avatar flex">
               <img src="img/avatar_io.jpg" alt="">
               <div class="info">
-                <span>Nome utente</span>
+                <h4>Nome utente</h4>
               </div>
-              <div class="icon grey">
-                <span><i class="fas fa-circle-notch"></i></span>
-                <span><i class="fas fa-comment-alt"></i></span>
-                <span><i class="fas fa-ellipsis-v"></i></span>
+              <div class="icon flex grey">
+                <i class="fas fa-circle-notch"></i>
+                <i class="fas fa-comment-alt"></i>
+                <i class="fas fa-ellipsis-v"></i>
               </div>
             </div>
           </div>
@@ -40,57 +41,73 @@
               <li>
                 <div class="avatar flex">
                   <i class="fas fa-bell-slash"></i>
-                  <h4>Ricevi notifiche di nuovi messaggi
-                  <a href="#">Attiva notifiche desktop</a>
-                </h4>
+                  <div class="info">
+                    <h4>Ricevi notifiche di nuovi messaggi</h4>
+                    <h4><a href="#">Attiva notifiche desktop</a></h4>
+                  </div>
+
                 </div>
              </li>
             </ul>
           </div>
 
-          <div class="bar grey">
-            <div class="search flex">
-              <span>
-                <i class="fas fa-search grey avatar">
-                <input type="textarea" name="" value="">
-                </i>
-              </span>
-            </div>
+          <div class="search flex">
+            <i class="fas fa-search grey avatar"></i>
+            <span>
+            <input type="textarea" name="" value="" placeholder="Cerca o inizia una nuova chat">
+          </span>
           </div>
 
-          <div class="active-chat">
-            <ul>
-              <li>
-                <div class="avatar flex space">
-                  <img src="img/avatar_1.jpg" alt="">
-                  <h4>Michele
-                  <p class="grey">ok...</p></h4>
-                </div>
-              </li>
-              <li>
-                <div class="avatar flex space">
-                  <img src="img/avatar_2.jpg" alt="">
-                  <h4>Fabio
-                  <p class="grey">ok...</p></h4>
-                </div>
-              </li>
-              <li>
-                <div class="avatar flex space">
-                  <img src="img/avatar_3.jpg" alt="">
-                  <h4>Samuele
-                  <p class="grey">ok...</p></h4>
-                </div>
-              </li>
-              <li>
-                <div class="avatar flex space">
-                  <img src="img/avatar_4.jpg" alt="">
-                  <h4>Luisa
-                  <p class="grey">ok...</p></h4>
-                </div>
-              </li>
-            </ul>
+            <section class="active-chat">
+              <ul>
+                <li>
+                  <div class="avatar flex space">
+                    <img src="img/avatar_1.jpg" alt="">
+                    <div class="info">
+                      <h4>Michele</h4>
+                      <p class="grey">ok...</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="avatar flex space">
+                    <img src="img/avatar_2.jpg" alt="">
+                    <div class="info chat">
+                      <h4>Fabio</h4>
+                      <p class="grey">ok...</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="avatar flex space">
+                    <img src="img/avatar_3.jpg" alt="">
+                    <div class="info chat">
+                      <h4>Samuele</h4>
+                      <p class="grey">ok...</p>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="avatar flex space">
+                    <img src="img/avatar_4.jpg" alt="">
+                    <div class="info chat">
+                      <h4>Luisa</h4>
+                      <p class="grey">ok...</p>
+                      </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="avatar flex space">
+                    <img src="img/avatar_3.jpg" alt="">
+                    <div class="info chat">
+                      <h4>Gianni</h4>
+                      <p class="grey">ok...</p>
+                      </div>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
+          </section>
 
     <!-- Colonna di destra -->
           <div class="right-column">
@@ -98,13 +115,13 @@
               <div class="avatar flex">
                 <img src="img/avatar_6.jpg" alt="">
                 <div class="info">
-                  <span><strong>Sara</strong></span>
+                  <h4>Sara</h4>
                   <p class="grey">Ultimo accesso oggi 20.11.2020 alle 16.43</p>
                 </div>
-                  <div class="icon grey">
-                    <span><i class="fas fa-search"></i></span>
-                    <span><i class="fas fa-paperclip"></i></span>
-                    <span><i class="fas fa-ellipsis-v"></i></span>
+                  <div class="icon flex grey">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                   </div>
                 </div>
             </div>
@@ -135,11 +152,11 @@
             </div>
 
             <div class="bar flex">
-              <div class="grey">
+              <div class="avatar grey">
                 <i class="far fa-smile"></i>
               </div>
-              <input type="textarea" name="" value="" placeholder="Scrivi un messaggio...">
-              <div class="grey">
+              <input type="textarea" name="" value="" placeholder=" Scrivi un messaggio...">
+              <div class="avatar grey">
                 <i class="fas fa-microphone"></i>
               </div>
             </div>

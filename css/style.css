@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: 'Montserrat', sans-serif;
-  font-size: 15px;
+  font-size: 13px;
 }
 
 .flex {
@@ -14,13 +14,6 @@
 
 li {
   list-style: none;
-}
-
-
-.avatar > img {
-  width: 40px;
-  height: auto;
-  border-radius: 50%;
 }
 
 /* Contenitore app */
@@ -40,13 +33,11 @@ li {
 /* Finestra app */
 
 #window {
-  width: 80%;
+  width: 90%;
   height: 90%;
-  margin: 0 auto;
   position: absolute;
   top: 5%;
-  left: 10%;
-  background-color: #ededed;
+  left: 5%;
 }
 
 /* Finestra app: colonna sinistra */
@@ -55,19 +46,43 @@ li {
   width: 30%;
   height: 100%;
   border-right: 1px solid lightgrey;
+  background-color: #ededed;
 }
 
 .bar {
   width: 100%;
-  min-height: 60px;
+  height: 10%;
+  background-color: #ededed;
 }
 
 .avatar {
   padding: 5px 20px;
 }
 
-.info > span, .icon > span {
+.avatar > img {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.icon {
+  width: 50%;
+  justify-content: flex-end;
+}
+
+.bar i {
+  font-size: 18px;
+}
+
+.info, .icon > i {
   padding-left: 10px;
+}
+
+.info.chat > p {
+   white-space: nowrap;
+   width: 150px;
+   overflow: hidden;
+   text-overflow: ellipsis;
 }
 
 .grey {
@@ -87,33 +102,28 @@ li {
 
 .notification-bar i {
   border-radius: 50%;
-  padding: 10px;
+  padding: 15px;
   background-color: white;
   color: #34b7f1;
-  margin-right: 10px;
+  font-size: 15px;
 }
 
-span > i > input {
-    width: 250px;
-    height: 25px;
-    border: none;
-    margin: 0 auto;
-}
-
-span {
-  width: 100%;
-}
 
 .search {
-  height: 100%;
+  width: 95%;
   border: 1px solid lightgrey;
-  justify-content: center;
-  align-items: center;
+  border-radius: 5px;
+  margin: 5px auto;
   background-color: white;
+  padding: 5px;
+}
+
+.search > span > input {
+  width: 200px;
+  border: none;
 }
 
 .active-chat {
-  height: 65%;
   overflow-y: auto;
   background-color: white;
 }
@@ -136,8 +146,8 @@ span {
 .bar > input {
   width: 90%;
   height: 40px;
-  margin: 0px auto;
   border-radius: 10px;
+  margin: 0px auto;
 }
 
 .msg-container {
@@ -171,4 +181,11 @@ span {
 
 .msg-received > .msg-bubble {
   background-color: rgb(220, 248, 198);
+}
+
+/* Mediaquery */
+@media only screen and (max-width: 1197px) {
+  * {
+    font-size: 13px;
+  }
 }
