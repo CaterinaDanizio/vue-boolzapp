@@ -59,12 +59,12 @@
 
             <section class="list-chat">
               <ul>
-                <li v-for="(item, index) in chat" @click="chatSelect">
+                <li v-for="(item, index) in chat"  :class="{'active': index === chatActive}" @click="chatSelect(index)">
                   <div class="avatar flex space">
                     <img :src="item.img" alt="">
                     <div class="info chat">
                       <h4>{{ item.username }}</h4>
-                      <p class="grey">{{ item.lastMessage }}</p>
+                      <p class="grey"> {{ item.msg[item.msg.length-1].text }} </p>
                     </div>
                   </div>
                 </li>
@@ -76,10 +76,10 @@
           <div class="right-column">
             <div class="bar">
               <div class="avatar flex">
-                <img src="img/avatar_1.jpg" alt="">
+                <img :src="chat[chatActive].img" alt="">
                 <div class="info">
-                  <h4>Michele</h4>
-                  <p class="grey">Ultimo accesso oggi 20.11.2020 alle 16.43</p>
+                  <h4>{{ chat[chatActive].username }} </h4>
+                  <p class="grey"> {{ chat[chatActive].lastAccess }}</p>
                 </div>
                   <div class="icon flex grey">
                     <i class="fas fa-search"></i>
@@ -91,24 +91,9 @@
 
             <div class="chat-area">
               <div class="msg-container flex">
-                <div class="msg-sent flex">
-                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
-                    <p>{{ item.message1 }}</p>
-                  </div>
-                </div>
-                <div class="msg-received flex">
-                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
-                    <p>{{ item.message2 }}</p>
-                  </div>
-                </div>
-                <div class="msg-sent flex">
-                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
-                    <p>{{ item.message3 }}</p>
-                  </div>
-                </div>
-                <div class="msg-received flex">
-                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
-                    <p>{{ item.message4 }}</p>
+                <div class="flex" v-for="item in chat[chatActive].msg" :class="item.type==='ric' ? 'msg-received' : 'msg-sent'">
+                  <div class="msg-bubble">
+                    <p> {{ item.text }} </p>
                   </div>
                 </div>
               </div>

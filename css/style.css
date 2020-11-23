@@ -81,7 +81,7 @@ img {
 
 .info.chat > p {
    white-space: nowrap;
-   width: 150px;
+   width: 190px;
    overflow: hidden;
    text-overflow: ellipsis;
 }
@@ -185,6 +185,7 @@ img {
   max-width: 50%;
   border-radius: 10px;
   padding: 20px;
+  margin-bottom: 5px;
   background-color: white;
 }
 
