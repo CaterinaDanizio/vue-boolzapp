@@ -20,7 +20,7 @@
     <div class="container">
       <div id="header">
       </div>
-      <div id="window" class="flex">
+      <div id="window">
         <div class="left-column">
           <div class="bar">
             <div class="avatar flex">
@@ -45,7 +45,6 @@
                     <h4>Ricevi notifiche di nuovi messaggi</h4>
                     <h4><a href="#">Attiva notifiche desktop</a></h4>
                   </div>
-
                 </div>
              </li>
             </ul>
@@ -58,53 +57,18 @@
           </span>
           </div>
 
-            <section class="active-chat">
+            <section class="list-chat">
               <ul>
-                <li>
-                  <div class="avatar flex space">
-                    <img src="img/avatar_1.jpg" alt="">
-                    <div class="info">
-                      <h4>Michele</h4>
-                      <p class="grey">ok...</p>
+                <li v-for="(item, index) in chat">
+                  <div class="avatar flex space active">
+                    <img :src="item.img" alt="">
+                    <div class="info chat">
+                      <h4>{{ item.username }}</h4>
+                      <p class="grey">{{ item.lastMessage }}</p>
                     </div>
                   </div>
                 </li>
-                <li>
-                  <div class="avatar flex space">
-                    <img src="img/avatar_2.jpg" alt="">
-                    <div class="info chat">
-                      <h4>Fabio</h4>
-                      <p class="grey">ok...</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="avatar flex space">
-                    <img src="img/avatar_3.jpg" alt="">
-                    <div class="info chat">
-                      <h4>Samuele</h4>
-                      <p class="grey">ok...</p>
-                    </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="avatar flex space">
-                    <img src="img/avatar_4.jpg" alt="">
-                    <div class="info chat">
-                      <h4>Luisa</h4>
-                      <p class="grey">ok...</p>
-                      </div>
-                  </div>
-                </li>
-                <li>
-                  <div class="avatar flex space">
-                    <img src="img/avatar_3.jpg" alt="">
-                    <div class="info chat">
-                      <h4>Gianni</h4>
-                      <p class="grey">ok...</p>
-                      </div>
-                  </div>
-                </li>
+
               </ul>
             </div>
           </section>
@@ -113,9 +77,9 @@
           <div class="right-column">
             <div class="bar">
               <div class="avatar flex">
-                <img src="img/avatar_6.jpg" alt="">
+                <img src="img/avatar_1.jpg" alt="">
                 <div class="info">
-                  <h4>Sara</h4>
+                  <h4>Michele</h4>
                   <p class="grey">Ultimo accesso oggi 20.11.2020 alle 16.43</p>
                 </div>
                   <div class="icon flex grey">
