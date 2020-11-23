@@ -59,8 +59,8 @@
 
             <section class="list-chat">
               <ul>
-                <li v-for="(item, index) in chat">
-                  <div class="avatar flex space active">
+                <li v-for="(item, index) in chat" @click="chatSelect">
+                  <div class="avatar flex space">
                     <img :src="item.img" alt="">
                     <div class="info chat">
                       <h4>{{ item.username }}</h4>
@@ -68,7 +68,6 @@
                     </div>
                   </div>
                 </li>
-
               </ul>
             </div>
           </section>
@@ -93,23 +92,23 @@
             <div class="chat-area">
               <div class="msg-container flex">
                 <div class="msg-sent flex">
-                  <div class="msg-bubble">
-                    <p>Ciao come stai?</p>
+                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
+                    <p>{{ item.message1 }}</p>
                   </div>
                 </div>
                 <div class="msg-received flex">
-                  <div class="msg-bubble">
-                    <p>Non c'è male...La serata di ieri è stata una bomba atomica. Peccato che non sei riuscita a venire. Come stai oggi?</p>
+                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
+                    <p>{{ item.message2 }}</p>
                   </div>
                 </div>
                 <div class="msg-sent flex">
-                  <div class="msg-bubble">
-                    <p>Io tutto alla grande, mi sono ripresa completamente.</p>
+                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
+                    <p>{{ item.message3 }}</p>
                   </div>
                 </div>
                 <div class="msg-received flex">
-                  <div class="msg-bubble">
-                    <p>Dai allora la prossima volta non puoi mancare</p>
+                  <div class="msg-bubble" v-for="(item, index) in chat[0].msg">
+                    <p>{{ item.message4 }}</p>
                   </div>
                 </div>
               </div>
