@@ -97,6 +97,7 @@
                   <div class="msg-bubble">
                     <p> {{ item.text }} </p>
                     <p class="date f-right"> {{ item.date }} </p>
+                    <p> {{ item.newtext }} </p>
                   </div>
                 </div>
               </div>
@@ -106,9 +107,9 @@
               <div class="avatar grey">
                 <i class="far fa-smile"></i>
               </div>
-              <input type="textarea" name="" value="" placeholder=" Scrivi un messaggio...">
-              <div class="avatar grey">
-                <i class="fas fa-microphone"></i>
+              <input type="textarea" name="" value="" placeholder=" Scrivi un messaggio..." v-model="newText" v-on:keyup.enter="add() ; timeout()">
+              <div class="avatar grey" @click="add() ; timeout()">
+                <i class="fas fa-microphone" @click="add"></i>
               </div>
             </div>
 

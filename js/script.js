@@ -9,6 +9,7 @@ var app = new Vue({
 
     // Index chat attiva
       chatActive: 0,
+      newText: "",
 
   // Elenco chat
     // Chat 1
@@ -17,6 +18,7 @@ var app = new Vue({
           img: "img/avatar_1.jpg",
           username: "Michele",
           lastAccess: "Ultimo accesso 20.11.2020 alle 16.43",
+
 
     // Chat 1: messaggi
           msg: [
@@ -165,14 +167,34 @@ var app = new Vue({
          text: "Ottimo, dopo le 20 mi trovi a casa",
          date: "24.11.2020 ore 16.27"
         },
-      ],
-    },
-  ],
-},
-
-methods: {
-     chatSelect: function (index) {
-       return this.chatActive = index;
-     },
+       ],
+      },
+    ],
   },
-})
+
+  methods: {
+       chatSelect: function (index) {
+         return this.chatActive = index;
+       },
+
+       add: function() {
+         this.chat[this.chatActive].msg.push(
+           {
+            text: this.newText,
+            type: "sent"
+          }),
+           this.newText = "";
+          },
+
+       rispGen: function(){
+          this.chat[this.chatActive].msg.push (
+            {
+             text: "ok",
+             type: "ric"
+          });
+        },
+      timeout: function () {
+       setTimeout(this.rispGen, 1000)
+      }
+    }
+});
