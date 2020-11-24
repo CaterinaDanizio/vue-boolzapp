@@ -51,23 +51,25 @@
           </div>
 
           <div class="search flex">
-            <i class="fas fa-search grey avatar"></i>
-            <span>
+            <i class="fas fa-search grey avatar">
+            </i>
             <input type="textarea" name="" value="" placeholder="Cerca o inizia una nuova chat">
-          </span>
           </div>
 
             <section class="list-chat">
               <ul>
                 <li v-for="(item, index) in chat"  :class="{'active': index === chatActive}" @click="chatSelect(index)">
+                  <p class="date f-right"> {{ item.msg[item.msg.length-1].date }} </p>
                   <div class="avatar flex space">
                     <img :src="item.img" alt="">
                     <div class="info chat">
                       <h4>{{ item.username }}</h4>
                       <p class="grey"> {{ item.msg[item.msg.length-1].text }} </p>
+
+                      </div>
                     </div>
-                  </div>
-                </li>
+                  </li>
+
               </ul>
             </div>
           </section>
@@ -94,6 +96,7 @@
                 <div class="flex" v-for="item in chat[chatActive].msg" :class="item.type==='ric' ? 'msg-received' : 'msg-sent'">
                   <div class="msg-bubble">
                     <p> {{ item.text }} </p>
+                    <p class="date f-right"> {{ item.date }} </p>
                   </div>
                 </div>
               </div>

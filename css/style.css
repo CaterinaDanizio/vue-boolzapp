@@ -16,6 +16,10 @@ li {
   list-style: none;
 }
 
+.f-right {
+  float: right;
+}
+
 /* Contenitore app */
 
 .container {
@@ -93,7 +97,6 @@ img {
 .space {
   padding-top: 15px;
   padding-bottom: 15px;
-  border: 0.5px solid lightgrey;
 }
 
 .notification-bar {
@@ -109,20 +112,17 @@ img {
   font-size: 15px;
 }
 
-
 .search {
-  min-height: 10%;
-  width: 95%;
-  border: 1px solid lightgrey;
+  height: 40px;
+  width: 90%;
   border-radius: 5px;
-  margin: 0 auto;
+  margin: 5px auto;
   background-color: white;
-  padding: 5px;
+  padding: 3px 0;
 }
 
-.search > span > input {
-  width: 90%;
-  height: 10%;
+.search > input {
+  width: 100%;
   border: none;
 }
 
@@ -130,6 +130,15 @@ img {
   height: 65%;
   overflow-y: auto;
   background-color: white;
+}
+
+.list-chat li {
+  border-bottom: 1px lightgrey solid;
+}
+
+.list-chat li:hover {
+  background-color: #ededed;
+  cursor: pointer;
 }
 
 .active {
@@ -145,7 +154,7 @@ img {
 }
 
 .chat-area {
-  min-height: 80%;
+  height: 80%;
   background-image: url("../img/mine.jpg");
   background-size: cover;
   background-repeat: no-repeat;
@@ -171,6 +180,7 @@ img {
   width: 100%;
   flex-direction: row;
   justify-content: flex-start;
+  margin-right: 30px;
 }
 
 .msg-received {
@@ -184,13 +194,20 @@ img {
   min-height: 50px;
   max-width: 50%;
   border-radius: 10px;
-  padding: 20px;
-  margin-bottom: 5px;
+  padding: 10px;
+  margin-bottom: 10px;
   background-color: white;
 }
 
 .msg-received > .msg-bubble {
   background-color: rgb(220, 248, 198);
+}
+
+.date {
+  font-size: 10px;
+  padding-top: 5px;
+  padding-right: 5px;
+  color: grey;
 }
 
 /* Mediaquery */
