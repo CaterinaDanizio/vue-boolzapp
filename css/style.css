@@ -12,12 +12,35 @@
   align-items: center;
 }
 
+.f-right {
+  float: right;
+}
+
+.f-left {
+  float:left;
+}
+
 li {
   list-style: none;
 }
 
-.f-right {
-  float: right;
+img {
+  width: 40px;
+  height: auto;
+  border-radius: 50%;
+}
+
+.back-wh {
+  background-color: white;
+}
+
+.col-grey {
+  color: grey;
+}
+
+i {
+  color: grey;
+  font-size: 18px;
 }
 
 /* Contenitore app */
@@ -50,8 +73,7 @@ li {
   width: 30%;
   height: 100%;
   border-right: 1px solid lightgrey;
-  background-color: #ededed;
-  float: left;
+  background-color: #F5F5F5;
 }
 
 
@@ -65,18 +87,8 @@ li {
   padding: 5px 20px;
 }
 
-img {
-  width: 40px;
-  height: auto;
-  border-radius: 50%;
-}
-
 .icon {
   width: 50%;
-}
-
-.bar i {
-  font-size: 18px;
 }
 
 .info, .icon > i {
@@ -90,10 +102,6 @@ img {
    text-overflow: ellipsis;
 }
 
-.grey {
-  color: grey;
-}
-
 .space {
   padding-top: 15px;
   padding-bottom: 15px;
@@ -101,13 +109,12 @@ img {
 
 .notification-bar {
   min-height: 15%;
-  background-color: #34b7f1;
+  background-color: #9de1fe;
 }
 
 .notification-bar i {
   border-radius: 50%;
   padding: 15px;
-  background-color: white;
   color: #34b7f1;
   font-size: 15px;
 }
@@ -117,7 +124,6 @@ img {
   width: 90%;
   border-radius: 5px;
   margin: 5px auto;
-  background-color: white;
   padding: 3px 0;
 }
 
@@ -129,7 +135,6 @@ img {
 .list-chat {
   height: 65%;
   overflow-y: auto;
-  background-color: white;
 }
 
 .list-chat li {
@@ -150,7 +155,6 @@ img {
 .right-column {
   width: 70%;
   height: 100%;
-  float:left;
 }
 
 .chat-area {
@@ -196,7 +200,10 @@ img {
   border-radius: 10px;
   padding: 10px;
   margin-bottom: 10px;
-  background-color: white;
+}
+
+.msg-bubble:hover {
+  transform: translate(2%);
 }
 
 .msg-received > .msg-bubble {
@@ -207,7 +214,6 @@ img {
   font-size: 10px;
   padding-top: 5px;
   padding-right: 5px;
-  color: grey;
 }
 
 /* Mediaquery */
@@ -215,5 +221,4 @@ img {
   * {
     font-size: 11px;
   }
-
 }

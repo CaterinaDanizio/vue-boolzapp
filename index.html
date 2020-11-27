@@ -21,14 +21,14 @@
       <div id="header">
       </div>
       <div id="window">
-        <div class="left-column">
+        <div class="left-column f-left">
           <div class="bar">
             <div class="avatar flex">
               <img src="img/avatar_io.jpg" alt="">
               <div class="info">
                 <h4>Nome utente</h4>
               </div>
-              <div class="icon flex grey">
+              <div class="icon flex">
                 <i class="fas fa-circle-notch"></i>
                 <i class="fas fa-comment-alt"></i>
                 <i class="fas fa-ellipsis-v"></i>
@@ -40,7 +40,7 @@
             <ul>
               <li>
                 <div class="avatar flex">
-                  <i class="fas fa-bell-slash"></i>
+                  <i class="fas fa-bell-slash back-wh"></i>
                   <div class="info">
                     <h4>Ricevi notifiche di nuovi messaggi</h4>
                     <h4><a href="#">Attiva notifiche desktop</a></h4>
@@ -50,40 +50,38 @@
             </ul>
           </div>
 
-          <div class="search flex">
-            <i class="fas fa-search grey avatar">
+          <div class="search flex back-wh">
+            <i class="fas fa-search avatar">
             </i>
-            <input type="textarea" name="" value="" placeholder="Cerca o inizia una nuova chat">
+            <input type="textarea" name="" value="" placeholder="Cerca o inizia una nuova chat" v-model="searchChat" @keyup="search">
           </div>
 
-            <section class="list-chat">
+            <section class="list-chat back-wh" >
               <ul>
-                <li v-for="(item, index) in chat"  :class="{'active': index === chatActive}" @click="chatSelect(index)">
-                  <p class="date f-right"> {{ item.msg[item.msg.length-1].date }} </p>
+                <li v-for="(item, index) in chat"  :class="{'active': index === chatActive}" @click="chatSelect(index)" v-if="item.show">
+                  <p class="date f-right col-grey"> {{ item.msg[item.msg.length-1].date }} </p>
                   <div class="avatar flex space">
                     <img :src="item.img" alt="">
                     <div class="info chat">
                       <h4>{{ item.username }}</h4>
-                      <p class="grey"> {{ item.msg[item.msg.length-1].text }} </p>
-
+                      <p class="col-grey"> {{ item.msg[item.msg.length-1].text }} </p>
                       </div>
                     </div>
                   </li>
-
               </ul>
             </div>
           </section>
 
     <!-- Colonna di destra -->
-          <div class="right-column">
+          <div class="right-column f-left">
             <div class="bar">
               <div class="avatar flex">
                 <img :src="chat[chatActive].img" alt="">
                 <div class="info">
                   <h4>{{ chat[chatActive].username }} </h4>
-                  <p class="grey"> {{ chat[chatActive].lastAccess }}</p>
+                  <p class="col-grey"> {{ chat[chatActive].lastAccess }}</p>
                 </div>
-                  <div class="icon flex grey">
+                  <div class="icon flex">
                     <i class="fas fa-search"></i>
                     <i class="fas fa-paperclip"></i>
                     <i class="fas fa-ellipsis-v"></i>
@@ -94,9 +92,9 @@
             <div class="chat-area">
               <div class="msg-container flex">
                 <div class="flex" v-for="item in chat[chatActive].msg" :class="item.type==='ric' ? 'msg-received' : 'msg-sent'">
-                  <div class="msg-bubble">
+                  <div class="msg-bubble back-wh">
                     <p> {{ item.text }} </p>
-                    <p class="date f-right"> {{ item.date }} </p>
+                    <p class="date f-right col-grey"> {{ item.date }} </p>
                     <p> {{ item.newtext }} </p>
                   </div>
                 </div>
@@ -104,11 +102,11 @@
             </div>
 
             <div class="bar flex">
-              <div class="avatar grey">
+              <div class="avatar">
                 <i class="far fa-smile"></i>
               </div>
-              <input type="textarea" name="" value="" placeholder=" Scrivi un messaggio..." v-model="newText" v-on:keyup.enter="add() ; timeout()">
-              <div class="avatar grey" @click="add() ; timeout()">
+              <input type="textarea" name="" value="" placeholder=" Scrivi un messaggio..." v-model="newText" v-on:keyup.enter="add() ; setTimeout()">
+              <div class="avatar" @click="add() ; setTimeout()">
                 <i class="fas fa-microphone" @click="add"></i>
               </div>
             </div>

@@ -10,6 +10,8 @@ var app = new Vue({
     // Index chat attiva
       chatActive: 0,
       newText: "",
+      searchChat: "",
+
 
   // Elenco chat
     // Chat 1
@@ -18,6 +20,7 @@ var app = new Vue({
           img: "img/avatar_1.jpg",
           username: "Michele",
           lastAccess: "Ultimo accesso 20.11.2020 alle 16.43",
+          show: true,
 
 
     // Chat 1: messaggi
@@ -54,6 +57,7 @@ var app = new Vue({
         img: "img/avatar_2.jpg",
         username: "Fabio",
         lastAccess: "Ultimo accesso 21.11.2020 alle 17.43",
+        show: true,
 
 
     // Chat 2: messaggi
@@ -90,6 +94,7 @@ var app = new Vue({
       img: "img/avatar_3.jpg",
       username: "Samuele",
       lastAccess: "Ultimo accesso oggi 23.11.2020 alle 21.43",
+      show: true,
 
     // Chat 3: messaggi
       msg: [
@@ -126,6 +131,7 @@ var app = new Vue({
       img: "img/avatar_6.jpg",
       username: "Sara",
       lastAccess: "Ultimo accesso 24.11.2020 alle 18.43",
+      show: true,
 
       msg: [
         {type: "ric",
@@ -172,29 +178,58 @@ var app = new Vue({
     ],
   },
 
+// Funzione per selezionare la singola chat
   methods: {
        chatSelect: function (index) {
          return this.chatActive = index;
        },
 
+// Funzione per ricavare la data corrente
+        currentday: function () {
+              var today = new Date();
+              var date = today.getDate()+'.'+(today.getMonth()+1)+'.'+today.getFullYear();
+              var hour = today.getHours() + ":" + today.getMinutes();
+              var dateHour = date+' ' + 'ore'+' ' +hour;
+              return dateHour;
+            },
+
+
+// Funzione per aggiungere un msg tramite input
+
        add: function() {
-         this.chat[this.chatActive].msg.push(
-           {
+         if (this.newText === "") {
+
+      }
+      else {
+        this.chat[this.chatActive].msg.push(
+          {
             text: this.newText,
+            date: this.currentday(),
             type: "sent"
           }),
            this.newText = "";
-          },
+         }
 
-       rispGen: function(){
-          this.chat[this.chatActive].msg.push (
-            {
-             text: "ok",
-             type: "ric"
-          });
-        },
-      timeout: function () {
-       setTimeout(this.rispGen, 1000)
-      }
+// Funzione per generare risposta automatica temporizzata ad ogni msg inserito (se uso arrow function posso usare this, altrimenti app)
+         setTimeout(() => {
+                   this.chat[this.chatActive].msg.push({
+                   text: "ok, sono d'accordo",
+                   date: this.currentday(),
+                   type: "ric"
+                   });
+                 }, 1000)
+      },
+
+// Funzione per filtrare dalla lista di chat sulla base dell'input dell'utente
+
+          search: function() {
+          this.chat.forEach(item => {
+            if (item.username.toLowerCase().includes(this.searchChat.toLowerCase())) {
+              item.show = true;
+            } else {
+              item.show = false;
+            }
+          })
+        }
     }
 });
